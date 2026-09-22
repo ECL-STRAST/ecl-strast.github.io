@@ -1,0 +1,12 @@
+# The groups on the People page, in display order. A person's `role`
+# front-matter field must be one of these keys.
+- key: lead
+  title: Group lead
+- key: researcher
+  title: Researchers
+- key: student
+  title: Students
+- key: alumni
+  title: Alumni
+- key: collaborator
+  title: Collaborators

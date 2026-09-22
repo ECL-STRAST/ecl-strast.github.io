@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="person">
+  <p class="brand-sub"><a href="{{ '/people/' | relative_url }}">&larr; All people</a></p>
+  {% include portrait.html person=page class="portrait large" %}
+  <h1>{{ page.title }}</h1>
+  <p class="meta">{{ page.position }}{% if page.affiliation %} &middot; {{ page.affiliation }}{% endif %}</p>
+  {% include social.html person=page %}
+  {{ content }}
+  {% if page.pubs_author %}
+  <h2>Publications</h2>
+  {% include publications.html author=page.pubs_author limit=50 %}
+  {% endif %}
+</article>

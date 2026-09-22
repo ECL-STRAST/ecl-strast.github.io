@@ -1,0 +1,3 @@
+{%- comment -%} A file path as a URL: full URLs pass through, site paths get the baseurl. {%- endcomment -%}
+{%- assign head = include.path | slice: 0, 4 -%}
+{%- if head == "http" -%}{{ include.path }}{%- else -%}{{ include.path | relative_url }}{%- endif -%}

@@ -1,0 +1,12 @@
+# The top menu, in order. `url` is site-relative unless it starts with
+# http. Set `pubs: true` to point at the web-pubs catalog instead.
+- title: Home
+  url: /
+- title: News
+  url: /news/
+- title: People
+  url: /people/
+- title: Research
+  url: /research/
+- title: Publications
+  pubs: true

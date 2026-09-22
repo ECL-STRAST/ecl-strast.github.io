@@ -1,0 +1,9 @@
+<footer>
+  <div class="rule"></div>
+  <p>
+    {{ site.title }}
+    {% if site.affiliation %}&middot; {% if site.affiliation_url %}<a href="{{ site.affiliation_url }}">{{ site.affiliation }}</a>{% else %}{{ site.affiliation }}{% endif %}{% endif %}
+    {% if site.contact_email != "" %}&middot; <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>{% endif %}
+    &middot; <a href="https://github.com/{{ site.github_org }}">GitHub</a>
+  </p>
+</footer>

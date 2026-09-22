@@ -1,0 +1,9 @@
+<ul class="cards">
+{% assign topics = site.research | sort: "order" %}
+{% for t in topics %}
+  <li><a class="card" href="{{ t.url | relative_url }}">
+    {% if t.image %}<img src="{% include src.html path=t.image %}" alt="" loading="lazy">{% else %}<div class="no-image"></div>{% endif %}
+    <div class="body"><h3>{{ t.title }}</h3><p>{{ t.summary }}</p></div>
+  </a></li>
+{% endfor %}
+</ul>

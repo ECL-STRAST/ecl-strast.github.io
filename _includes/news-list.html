@@ -1,0 +1,14 @@
+{%- assign items = site.news | sort: "date" | reverse -%}
+{%- if include.limit -%}{%- assign items = items | slice: 0, include.limit -%}{%- endif -%}
+<ul class="rows">
+{% for item in items %}
+  <li class="news-row">
+    <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: "%-d %b %Y" }}</time>
+    <div>
+      {% if item.image %}<img class="thumb" src="{% include src.html path=item.image %}" alt="" loading="lazy">{% endif %}
+      <a class="title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      <p>{{ item.excerpt | strip_html | truncatewords: 40 }}</p>
+    </div>
+  </li>
+{% endfor %}
+</ul>

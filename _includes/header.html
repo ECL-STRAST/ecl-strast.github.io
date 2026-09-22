@@ -1,0 +1,27 @@
+<header>
+  <a class="mark" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/ecl-logo.png' | relative_url }}" alt=""></a>
+  {% if page.url == "/" %}
+  <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+  {% else %}
+  {% comment %}Not an h1 away from home: the page title owns that.{% endcomment %}
+  <p class="brand"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+  {% endif %}
+  <nav class="site-nav" aria-label="Site">
+  {% for item in site.data.navigation %}
+    {% if item.pubs %}
+      {% assign href = site.pubs_url %}
+      {% assign active = false %}
+    {% else %}
+      {% assign href = item.url | relative_url %}
+      {% if item.url == "/" %}
+        {% if page.url == "/" %}{% assign active = true %}{% else %}{% assign active = false %}{% endif %}
+      {% else %}
+        {% assign active = page.url | slice: 0, item.url.size %}
+        {% if active == item.url %}{% assign active = true %}{% else %}{% assign active = false %}{% endif %}
+      {% endif %}
+    {% endif %}
+  <a href="{{ href }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+  {% endfor %}
+  </nav>
+</header>
+<div class="rule"></div>

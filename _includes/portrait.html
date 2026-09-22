@@ -1,0 +1,7 @@
+{%- assign p = include.person -%}
+{%- if p.photo -%}
+<img class="{{ include.class | default: 'portrait' }}" src="{% include src.html path=p.photo %}" alt="{{ p.title | escape }}" loading="lazy">
+{%- else -%}
+{%- assign words = p.title | split: " " -%}
+<span class="{{ include.class | default: 'portrait' }} initials" aria-hidden="true">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</span>
+{%- endif -%}

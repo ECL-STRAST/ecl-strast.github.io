@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article>
+  <p class="brand-sub"><a href="{{ '/news/' | relative_url }}">&larr; All news</a></p>
+  <h1>{{ page.title }}</h1>
+  <p class="meta">{{ page.date | date: "%-d %B %Y" }}</p>
+  {% if page.image %}{% include figure.html src=page.image alt=page.title %}{% endif %}
+  {{ content }}
+  {% if page.publication %}{% include publications.html slugs=page.publication %}{% endif %}
+</article>

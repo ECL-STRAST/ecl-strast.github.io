@@ -1,0 +1,16 @@
+{%- comment -%}
+Publications and theses read live from the web-pubs catalog.
+  {% include publications.html slugs="2025-santos-paz-cervical-rom, 2022-santos-paz-crom-app" %}
+  {% include publications.html topic="vr" limit=5 %}          (a web-pubs topic)
+  {% include publications.html author="Santos-Paz" %}          (part of an author's name)
+  {% include publications.html type="publication" limit=5 %}   (newest papers)
+Slugs are the folder names under web-pubs/content/.
+{%- endcomment -%}
+<ul class="pubs"
+    {% if include.slugs %}data-slugs="{{ include.slugs | escape }}"{% endif %}
+    {% if include.topic %}data-topic="{{ include.topic | escape }}"{% endif %}
+    {% if include.author %}data-author="{{ include.author | escape }}"{% endif %}
+    {% if include.type %}data-type="{{ include.type | escape }}"{% endif %}
+    {% if include.limit %}data-limit="{{ include.limit }}"{% endif %}>
+  <li class="pubs-loading"><a href="{{ site.pubs_url }}">Browse the publication catalog</a></li>
+</ul>

@@ -1,0 +1,11 @@
+{%- assign p = include.person -%}
+{%- if p.email or p.website or p.github or p.linkedin or p.orcid or p.scholar -%}
+<p class="socials">
+  {%- if p.email %}<a class="social" href="mailto:{{ p.email }}" aria-label="Email">{% include icons/email.svg %}</a>{% endif -%}
+  {%- if p.website %}<a class="social" href="{{ p.website }}" aria-label="Website">{% include icons/website.svg %}</a>{% endif -%}
+  {%- if p.orcid %}<a class="social" href="https://orcid.org/{{ p.orcid }}" aria-label="ORCID">{% include icons/orcid.svg %}</a>{% endif -%}
+  {%- if p.scholar %}<a class="social" href="{{ p.scholar }}" aria-label="Google Scholar">{% include icons/scholar.svg %}</a>{% endif -%}
+  {%- if p.github %}<a class="social" href="{{ p.github }}" aria-label="GitHub">{% include icons/github.svg %}</a>{% endif -%}
+  {%- if p.linkedin %}<a class="social" href="{{ p.linkedin }}" aria-label="LinkedIn">{% include icons/linkedin.svg %}</a>{% endif -%}
+</p>
+{%- endif -%}

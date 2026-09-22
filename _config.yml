@@ -1,0 +1,61 @@
+# Site-wide settings. Restart `jekyll serve` after editing this file.
+
+title: Embodied Computing Lab
+short_title: ECL
+tagline: Virtual reality, motion capture and physiological computing for health
+description: >-
+  The Embodied Computing Lab (ECL) builds and validates virtual reality,
+  motion capture and physiological computing tools for rehabilitation,
+  clinical assessment and medical training.
+# The group's institution, shown in the footer and on the home page.
+affiliation: Universidad CEU San Pablo
+affiliation_url: https://www.uspceu.com/
+github_org: ECL-STRAST
+# Public contact address for the group. Leave empty to hide it.
+contact_email: ""
+
+url: https://ecl-strast.github.io
+baseurl: ""
+
+# Where the web-pubs catalog is published. The site reads its index.json
+# to list publications, so this must end with a slash. Root-relative on
+# GitHub Pages (same origin); use the full URL when previewing locally:
+#   bundle exec jekyll serve --config _config.yml,_config.local.yml
+pubs_url: /web-pubs/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+plugins:
+  - jekyll-seo-tag
+
+collections:
+  news:
+    output: true
+    permalink: /news/:year/:month/:title/
+  people:
+    output: true
+    permalink: /people/:name/
+  research:
+    output: true
+    permalink: /research/:name/
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: page }
+  - scope: { type: news }
+    values: { layout: news }
+  - scope: { type: people }
+    values: { layout: person }
+  - scope: { type: research }
+    values: { layout: topic }
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _config.local.yml
+  - vendor
+  - .jekyll-cache

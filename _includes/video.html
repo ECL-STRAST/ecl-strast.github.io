@@ -1,0 +1,21 @@
+{%- comment -%}
+A video, from YouTube, Vimeo or a file in this repository.
+  {% include video.html youtube="M4Zs9HhYMzI" caption="Optional caption" %}
+  {% include video.html vimeo="123456789" %}
+  {% include video.html file="/assets/video/demo.mp4" poster="/assets/img/news/demo.jpg" %}
+The YouTube id is the part after youtu.be/ or watch?v= in the link.
+{%- endcomment -%}
+<figure class="video">
+  {% if include.youtube %}
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ include.youtube | url_encode }}" title="{{ include.caption | default: 'Video' | escape }}"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+  {% elsif include.vimeo %}
+  <iframe src="https://player.vimeo.com/video/{{ include.vimeo | url_encode }}" title="{{ include.caption | default: 'Video' | escape }}"
+          allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  {% elsif include.file %}
+  <video controls preload="metadata"{% if include.poster %} poster="{% include src.html path=include.poster %}"{% endif %}>
+    <source src="{% include src.html path=include.file %}">
+  </video>
+  {% endif %}
+  {% if include.caption %}<figcaption>{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
+</figure>

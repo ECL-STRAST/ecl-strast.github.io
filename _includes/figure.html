@@ -1,0 +1,9 @@
+{%- comment -%}
+An image with an optional caption.
+  {% include figure.html src="/assets/img/news/photo.jpg" alt="What it shows" caption="Optional caption" %}
+Optional: size="small" (half width, floated right) or size="medium".
+{%- endcomment -%}
+<figure class="figure{% if include.size %} {{ include.size }}{% endif %}">
+  <img src="{% include src.html path=include.src %}" alt="{{ include.alt | default: include.caption | escape }}" loading="lazy">
+  {% if include.caption %}<figcaption>{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
+</figure>

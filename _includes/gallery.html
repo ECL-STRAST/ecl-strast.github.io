@@ -1,0 +1,24 @@
+{%- comment -%}
+A grid of images. Either every image in a folder, in file-name order:
+  {% include gallery.html folder="/assets/img/gallery/lab-2026" %}
+or a list of images, comma separated:
+  {% include gallery.html images="/assets/img/a.jpg, /assets/img/b.jpg" %}
+Clicking an image opens it full size.
+{%- endcomment -%}
+<div class="gallery">
+{% if include.folder %}
+  {% assign prefix = include.folder | append: "/" %}
+  {% assign files = site.static_files | sort: "path" %}
+  {% for file in files %}
+    {% assign start = file.path | slice: 0, prefix.size %}
+    {% if start == prefix %}{% if file.extname == ".jpg" or file.extname == ".jpeg" or file.extname == ".png" or file.extname == ".webp" or file.extname == ".gif" %}
+  <a href="{{ file.path | relative_url }}"><img src="{{ file.path | relative_url }}" alt="{{ file.basename | replace: '-', ' ' }}" loading="lazy"></a>
+    {% endif %}{% endif %}
+  {% endfor %}
+{% else %}
+  {% assign list = include.images | split: "," %}
+  {% for item in list %}{% assign path = item | strip %}
+  <a href="{% include src.html path=path %}"><img src="{% include src.html path=path %}" alt="" loading="lazy"></a>
+  {% endfor %}
+{% endif %}
+</div>

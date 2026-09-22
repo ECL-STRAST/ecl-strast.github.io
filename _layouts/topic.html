@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="topic">
+  <p class="brand-sub"><a href="{{ '/research/' | relative_url }}">&larr; All research</a></p>
+  <h1>{{ page.title }}</h1>
+  {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+  {% if page.image %}{% include figure.html src=page.image alt=page.title caption=page.image_caption %}{% endif %}
+  {{ content }}
+  {% if page.publications or page.pubs_topic %}
+  <h2>Related publications and theses</h2>
+  {% if page.publications %}
+    {% assign slugs = page.publications | join: "," %}
+    {% include publications.html slugs=slugs %}
+  {% else %}
+    {% include publications.html topic=page.pubs_topic limit=10 %}
+  {% endif %}
+  {% endif %}
+</article>
