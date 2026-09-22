@@ -1,9 +1,7 @@
 ---
 title: Alberto Rubio-López
-role: researcher
-order: 2
-# Confirm the position (e.g. PhD student, clinical researcher).
-position: Researcher
+role: collaborator
+order: 14
 pubs_author: Rubio-López
 ---
 Alberto works on simulation-based medical training, comparing VR and

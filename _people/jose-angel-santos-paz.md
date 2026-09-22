@@ -1,9 +1,7 @@
 ---
 title: José Ángel Santos-Paz
-role: researcher
-order: 1
-# Confirm the position (e.g. PhD student, postdoctoral researcher).
-position: Researcher
+role: collaborator
+order: 13
 github: https://github.com/jsantospaz
 pubs_author: Santos-Paz
 ---

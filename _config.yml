@@ -8,8 +8,8 @@ description: >-
   motion capture and physiological computing tools for rehabilitation,
   clinical assessment and medical training.
 # The group's institution, shown in the footer and on the home page.
-affiliation: Universidad CEU San Pablo
-affiliation_url: https://www.uspceu.com/
+affiliation: Universidad Politécnica de Madrid
+affiliation_url: https://www.upm.es/
 github_org: ECL-STRAST
 # Public contact address for the group. Leave empty to hide it.
 contact_email: ""

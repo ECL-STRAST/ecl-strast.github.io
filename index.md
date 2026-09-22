@@ -6,7 +6,7 @@ title: Home
 
 <p class="lead">{{ site.tagline }}</p>
 
-We are a research group at [Universidad CEU San Pablo]({{ site.affiliation_url }})
+We are a research group at [{{ site.affiliation }}]({{ site.affiliation_url }})
 (Madrid, Spain). We design, build and validate interactive technology for
 health: virtual reality applications that measure how the body moves,
 immersive simulators for training clinicians, low-cost motion capture, and
