@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% seo %}
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <link rel="icon" href="{{ '/assets/img/ecl-logo.png' | relative_url }}">
 </head>
 <body>
@@ -16,6 +16,6 @@
 
 {% include footer.html %}
 <script>window.PUBS_URL = {{ site.pubs_url | jsonify }};</script>
-<script src="{{ '/assets/js/pubs.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/pubs.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>
