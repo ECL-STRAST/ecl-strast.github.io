@@ -17,5 +17,5 @@ The YouTube id is the part after youtu.be/ or watch?v= in the link.
     <source src="{% include src.html path=include.file %}">
   </video>
   {% endif %}
-  {% if include.caption %}<figcaption>{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
+  {% if include.caption and include.caption != "" %}<figcaption>{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
 </figure>

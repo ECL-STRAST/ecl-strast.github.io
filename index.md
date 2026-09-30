@@ -26,6 +26,8 @@ hardware against clinical gold standards, and why our code and datasets are
 
 </section>
 
+{% if site.home_video != "" %}{% include video.html youtube=site.home_video caption=site.home_video_caption %}{% endif %}
+
 <div class="section-head"><h2>News</h2><a href="{{ '/news/' | relative_url }}">All news &rarr;</a></div>
 {% include news-list.html limit=4 %}
 
