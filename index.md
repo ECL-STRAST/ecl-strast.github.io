@@ -4,6 +4,8 @@ title: Home
 ---
 <section class="hero" markdown="1">
 
+<img class="hero-logo" src="{{ '/assets/img/ecl-logo-large.webp' | relative_url }}" alt="Embodied Computing Lab: extended realities, motion capture, physical therapy, education" width="1408" height="768">
+
 <p class="lead">{{ site.tagline }}</p>
 
 We are a research group at [{{ site.affiliation }}]({{ site.affiliation_url }})

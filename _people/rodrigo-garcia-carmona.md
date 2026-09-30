@@ -4,8 +4,7 @@ role: lead
 order: 1
 position: Principal investigator
 affiliation: Universidad Politécnica de Madrid
-# Drop a square photo in /assets/img/people/ and uncomment:
-# photo: /assets/img/people/rodrigo-garcia-carmona.jpg
+photo: /assets/img/people/rodrigo-garcia-carmona.jpg
 github: https://github.com/rgarciacarmona
 # email: someone@example.org
 # website: https://example.org

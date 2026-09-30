@@ -68,6 +68,7 @@ main { margin-top: 1.5rem; }
 
 /* Home */
 .hero { margin: .5rem 0 1rem; }
+.hero-logo { display: block; width: 100%; height: auto; margin: 0 0 1rem; border-radius: .3rem; }
 .hero .lead { margin-top: .25rem; }
 .stats { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding: 0; list-style: none; color: var(--dim); font-size: .9rem; }
 .stats strong { color: var(--ecl-navy); font-size: 1.2rem; }
@@ -123,7 +124,8 @@ main { margin-top: 1.5rem; }
 .people li { text-align: center; }
 .people a { text-decoration: none; color: var(--ink); }
 .people a:hover strong { color: var(--ecl-blue); text-decoration: underline; }
-.people .portrait { float: none; margin: 0 auto .5rem; width: 96px; height: 96px; }
+.people .portrait { display: block; float: none; margin: 0 auto .5rem; width: 96px; height: 96px; }
+.people .portrait.initials { display: flex; }
 .people p { margin: .1rem 0; font-size: .85rem; color: var(--dim); }
 .people strong { display: block; }
 .collaborators { columns: 2 14rem; padding-left: 1.2rem; }
